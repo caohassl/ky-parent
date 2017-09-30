@@ -1,0 +1,66 @@
+/*输入框*/
+.login_putin {
+    float: left;
+    margin: 10% auto auto 38%;
+}
+.login_putin ul li input{
+    margin: 0;
+    width: 120%;
+    height: 30px;
+    font-size: 17px;
+    padding: 0.5em 0.5em;
+    -webkit-border-radius: .3em;
+    border: 1px solid #999;
+}
+
+.login_putin p{
+    font-size: 50px;
+}
+
+/*游客登陆按钮*/
+.login_btn{
+    width: 100%;
+    margin: 20px auto 0 auto;
+}
+
+.login_btn input{
+    width: 128%;
+    margin: 0;
+    padding: .5em 0;
+    -webkit-border-radius: .3em;
+    -moz-border-radius: .3em;
+    /*border: #1263be solid 1px;*/
+    background: #1b85fd;
+    color: #FFF;
+    font-size: 17px;
+    font-weight: bolder;
+    letter-spacing: 1em;
+    float: left;
+}
+
+.login_btn input:hover{
+    background:#1263be;
+}
+
+/*至尊宝经典图片*/
+.login_ico{
+    margin: 6% auto ;
+    text-align: center;
+}
+
+.login_ico img {
+    height: 300px;
+}
+
+/*至尊宝劲经典语录*/
+.statement{
+    width: 80%;
+    margin: auto;
+    text-indent: 2em;
+}
+.statement p{
+    float: right;
+}
+
+
+

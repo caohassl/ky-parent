@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kyweb.mapper.TbUserMapper">
+
+    <!--值对应-->
+    <resultMap id="BaseResultMap" type="com.kyweb.model.TbUser">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="insert_time" property="insertTime" jdbcType="VARCHAR"/>
+        <result column="update_time" property="updateTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="BaseColumnList">
+        id,name,password,insert_time,update_time
+    </sql>
+    <!--插入一条记录-->
+    <insert id="insertUser">
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>-->
+        INSERT INTO tb_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id,
+            <if test="name != null">name,</if>
+            <if test="password != null">password,</if>
+            <if test="insertTime != null">insertTime,</if>
+            <if test="updateTime != null">updateTime,</if>
+        </trim>
+        <trim prefix=" values(" suffix=")" suffixOverrides=",">
+            #{id,jdbcType=BIGINT}
+            <if test="name != null">#{name,jdbcType=VARCHAR},</if>
+            <if test="password != null">#{password,jdbcType=VARCHAR},</if>
+            <if test="insertTime != null">#{insertTime,jdbcType=TIMESTAMP},</if>
+            <if test="updateTime != null">#{updateTime,jdbcType=TIMESTAMP},</if>
+        </trim>
+    </insert>
+
+    <select id="findTbUser" resultMap="BaseResultMap" parameterType="java.lang.String">
+        SELECT
+        <include refid="BaseColumnList"/>
+        FROM tb_user WHERE name =#{name,jdbcType=VARCHAR}
+    </select>
+
+</mapper>
+
+        <!--<sql id="Base_Column_List" >-->
+        <!--id, app_no, status, servicesn, insert_time, update_time-->
+        <!--</sql>-->
+
+        <!--<insert id="insert" parameterType="com.gomefinance.mj.order.sync.entity.TbApplyAudit" >-->
+        <!--<selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >-->
+        <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        <!--insert into tb_apply_audit (id, app_no, status,-->
+        <!--servicesn, insert_time, update_time-->
+        <!--)-->
+        <!--values (#{id,jdbcType=BIGINT}, #{appNo,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR},-->
+        <!--#{servicesn,jdbcType=VARCHAR}, #{insertTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}-->
+        <!--)-->
+        <!--</insert>-->
+
+        <!--<update id="updateByPrimaryKeySelective" parameterType="com.gomefinance.mj.order.sync.entity.TbSmallStageLoan" >-->
+        <!--update tb_smallstage_loan-->
+        <!--<set >-->
+        <!--<if test="channelId != null" >-->
+        <!--channel_id = #{channelId,jdbcType=VARCHAR},-->
+        <!--</if>-->
+        <!--</set>-->
+        <!--where id = #{id,jdbcType=BIGINT}-->
+        <!--</update>-->
+
+        <!--<select id="findUserInfo" resultType="com.kyweb.model.User">-->
+        <!--select name, age,password from user;-->
+        <!--</select>-->
+
+        <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >-->
+        <!--delete from tb_smallstage_audit-->
+        <!--where id = #{id,jdbcType=BIGINT}-->
+        <!--</delete>-->
+
+        <!--<insert id="insertSelective" parameterType="com.gomefinance.mj.order.sync.entity.TbSmallStageAudit" >-->
+        <!--<selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >-->
+        <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        <!--insert into tb_smallstage_audit-->
+        <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
+        <!--id,-->
+        <!--<if test="appNo != null" >-->
+        <!--app_no,-->
+        <!--</if>-->
+        <!--<if test="status != null" >-->
+        <!--status,-->
+        <!--</if>-->
+        <!--<if test="servicesn != null" >-->
+        <!--servicesn,-->
+        <!--</if>-->
+        <!--<if test="insertTime != null" >-->
+        <!--insert_time,-->
+        <!--</if>-->
+        <!--<if test="updateTime != null" >-->
+        <!--update_time,-->
+        <!--</if>-->
+        <!--</trim>-->
+        <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
+        <!--#{id,jdbcType=BIGINT},-->
+        <!--<if test="appNo != null" >-->
+        <!--#{appNo,jdbcType=VARCHAR},-->
+        <!--</if>-->
+        <!--<if test="status != null" >-->
+        <!--#{status,jdbcType=VARCHAR},-->
+        <!--</if>-->
+        <!--<if test="servicesn != null" >-->
+        <!--#{servicesn,jdbcType=VARCHAR},-->
+        <!--</if>-->
+        <!--<if test="insertTime != null" >-->
+        <!--#{insertTime,jdbcType=TIMESTAMP},-->
+        <!--</if>-->
+        <!--<if test="updateTime != null" >-->
+        <!--#{updateTime,jdbcType=TIMESTAMP},-->
+        <!--</if>-->
+        <!--</trim>-->
+        <!--</insert>-->
+ 

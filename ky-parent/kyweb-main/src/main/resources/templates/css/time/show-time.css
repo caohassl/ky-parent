@@ -1,0 +1,31 @@
+.msgMain{
+    width: 80%;
+    margin: 0 auto;
+}
+.msgMain .nmAndMsg{
+    width: 80%;
+    margin: 50px;
+    /*position: absolute;*/
+}
+.msgMain .nmAndMsg .personalNm{
+    width: 20%;
+    text-align: right;
+    float: left;
+    height: inherit;
+    word-wrap: break-word;
+
+}
+.msgMain .nmAndMsg .msg{
+    position: relative;
+    margin-left: 20%;
+    width: 80%;
+    height: inherit;
+    word-wrap: break-word;
+}
+.ye{
+    width: 80%;
+    margin: 0 auto;
+}
+.next{
+    float:right;
+}

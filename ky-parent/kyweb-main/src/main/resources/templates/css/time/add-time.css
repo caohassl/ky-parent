@@ -1,0 +1,21 @@
+.quarz-statement{
+    margin:20px;
+}
+.mess-main {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.center{
+    margin:15px;
+    width: 500px;
+}
+.time{
+    width:45%;
+}
+.time ,.messcommit{
+    height:50px;
+}
+.message{
+    height:200px;
+}
